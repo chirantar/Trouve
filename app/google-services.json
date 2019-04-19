@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "134536029933",
+    "firebase_url": "https://trouve-app.firebaseio.com",
+    "project_id": "trouve-app",
+    "storage_bucket": "trouve-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134536029933:android:740c4143b698b047",
+        "android_client_info": {
+          "package_name": "thenvengers.com.trouve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134536029933-ql4sk18r7j39uelfr8obpuivj8dfdteb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thenvengers.com.trouve",
+            "certificate_hash": "902a29763b2c308ad273fa751dc7de9eeb990e98"
+          }
+        },
+        {
+          "client_id": "134536029933-djmgf802ogvh2cjpbso0rabga950g3if.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYTeiTAC4TfxSJcEQPj8LzoEWafAnqDiI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134536029933-djmgf802ogvh2cjpbso0rabga950g3if.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
