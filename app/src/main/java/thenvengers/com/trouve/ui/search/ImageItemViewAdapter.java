@@ -63,7 +63,7 @@ public class ImageItemViewAdapter extends RecyclerView.Adapter<ImageItemViewAdap
 
     private String getPhotoUrl(Photo photoObj) {
 
-        return String.format("https:/farm%s.staticflickr.com/%s/%s_%s.jpg",
+        return String.format("https://farm%s.staticflickr.com/%s/%s_%s.jpg",
                 photoObj.getFarm(),
                 photoObj.getServer(),
                 photoObj.getId(),

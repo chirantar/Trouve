@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.net.URI;
+
 import javax.security.auth.login.LoginException;
 
 import butterknife.BindView;
@@ -28,6 +30,7 @@ public class ImageHolder extends AppCompatActivity {
    (R.id.mImageView) public ImageView mImgView;
     @BindView
     (R.id.image_toolbar) public Toolbar mToolbar;
+    public String mImgUrl = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +53,11 @@ public class ImageHolder extends AppCompatActivity {
     private void getIncomingIntent() {
         Log.d(TAG, "In Incoming Intent");
         Intent i = getIntent();
-        if(i.hasExtra("m_url")){
+        if (i.hasExtra("m_url")){
             Log.d(TAG, "getIncomingIntent: found image url");
-            String imgUrl = i.getStringExtra("m_url");
-            Log.i(TAG, "getIncomingIntent: m_url = " + imgUrl);
-            Glide.with(this).load(imgUrl).into(mImgView);
+            mImgUrl = i.getStringExtra("m_url");
+            Log.i(TAG, "getIncomingIntent: m_url = " + mImgUrl);
+            Glide.with(this).load(mImgUrl).into(mImgView);
         }
     }
 
@@ -74,7 +77,14 @@ public class ImageHolder extends AppCompatActivity {
             Toast.makeText(ImageHolder.this, "Bookmark clicked", Toast.LENGTH_LONG).show();
             return true;
         }
-
+        else if (id == R.id.share) {
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Trouve");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, mImgUrl);
+            startActivity(Intent.createChooser(sharingIntent, getString(R.string.share)));
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
