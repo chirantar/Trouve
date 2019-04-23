@@ -47,8 +47,7 @@ public class ImageItemViewAdapter extends RecyclerView.Adapter<ImageItemViewAdap
         final Photo photoObj = mDataset.getPhoto().get(position);
         holder.mHeaderText.setText(photoObj.getId());
         //holder.mDetailsText.setText(mDataset[position].getDetails());
-
-        Glide.with(mContext).load(getPhotoUrl(photoObj)).into(holder.mImageView);
+        Glide.with(mContext).load(getPhotoUrl(photoObj)).centerCrop().into(holder.mImageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +82,5 @@ public class ImageItemViewAdapter extends RecyclerView.Adapter<ImageItemViewAdap
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
-
     }
 }
